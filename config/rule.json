@@ -1,0 +1,6 @@
+{
+  "minimumNativeBalance": "1",
+  "comparison": "gte",
+  "network": "atlantic-testnet",
+  "description": "Demo rule: the wallet must hold at least 1 PHRS on Pharos Atlantic Testnet"
+}

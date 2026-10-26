@@ -1,0 +1,17 @@
+{
+  "defaultProfile": "atlantic-testnet",
+  "profiles": {
+    "atlantic-testnet": {
+      "network": "atlantic-testnet",
+      "chainMcpUrl": "http://127.0.0.1:3001/mcp",
+      "selfHosted": true,
+      "note": "Official PharosNetwork/pharos-mcp self-hosted against the Atlantic testnet RPC. Start with: npm run chain-mcp"
+    },
+    "hosted-mainnet": {
+      "network": "mainnet",
+      "chainMcpUrl": "https://mcp.pharos.xyz/mcp",
+      "selfHosted": false,
+      "note": "Official hosted Chain MCP endpoint. Serves Pacific Mainnet (chain 1672). Rate limit 120 req/min."
+    }
+  }
+}

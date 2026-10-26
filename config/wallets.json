@@ -1,0 +1,15 @@
+{
+  "note": "Public demo addresses only (no keys exist for them in this repo). Balances live-verified 2026-10-26 on Atlantic Testnet.",
+  "funded": {
+    "address": "0x6378d100db94ba95d0fa0e50bdab3fed01dc26e7",
+    "label": "Active Atlantic testnet wallet (observed with ~100.93 PHRS)"
+  },
+  "empty": {
+    "address": "0x76c9cf548b4179f8901cda1f8623568b58215e62",
+    "label": "Zero-balance Atlantic testnet wallet"
+  },
+  "mainnet-sample": {
+    "address": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+    "label": "Pharos Pacific Mainnet sample wallet (used with the hosted-mainnet profile)"
+  }
+}

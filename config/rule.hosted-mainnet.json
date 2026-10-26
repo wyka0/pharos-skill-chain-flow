@@ -1,0 +1,6 @@
+{
+  "minimumNativeBalance": "0.000001",
+  "comparison": "gte",
+  "network": "mainnet",
+  "description": "Hosted-mainnet demo rule: wallet must hold a non-zero amount of native PROS on Pharos Pacific Mainnet"
+}

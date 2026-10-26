@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+coverage/
+
+# vendored official Chain MCP server (cloned by scripts/chain-mcp.mjs)
+vendor/
+
+# logs
+*.log
+npm-debug.log*
+
+# local secrets (this project is read-only and needs none, but keep the pattern)
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db

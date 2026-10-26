@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "pharos-skill-chain-flow.trace/1",
+  "traceId": "phcd-mvoj05gg-2b05c7b0",
+  "createdAt": "2026-10-26T00:36:10.528Z",
+  "request": "Check this Pharos mainnet wallet's native PROS balance against my configured minimum.",
+  "skill": {
+    "name": "pharos-chain-decision",
+    "version": "0.1.0",
+    "path": "skills/pharos-chain-decision"
+  },
+  "config": {
+    "profile": "hosted-mainnet",
+    "rule": {
+      "minimumNativeBalance": "0.000001",
+      "comparison": "gte",
+      "network": "mainnet",
+      "description": "Hosted-mainnet demo rule: wallet must hold a non-zero amount of native PROS on Pharos Pacific Mainnet"
+    },
+    "rulePath": "config/rule.hosted-mainnet.json",
+    "networksPath": "skills/pharos-chain-decision/assets/networks.json",
+    "network": {
+      "name": "mainnet",
+      "rpcUrl": "https://rpc.pharos.xyz",
+      "chainId": 1672,
+      "explorerUrl": "https://www.pharosscan.xyz/",
+      "explorerApiUrl": "https://api.socialscan.io/pharos-mainnet",
+      "nativeToken": "PROS"
+    },
+    "address": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+    "mcpUrl": "https://mcp.pharos.xyz/mcp",
+    "requiredTools": [
+      "get_chain_info",
+      "get_balance"
+    ]
+  },
+  "steps": [
+    {
+      "index": 1,
+      "name": "validate-input",
+      "status": "ok",
+      "startedAt": "2026-10-26T00:36:10.529Z",
+      "durationMs": 0,
+      "detail": {
+        "address": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+        "network": {
+          "name": "mainnet",
+          "chainId": 1672
+        },
+        "rule": {
+          "minimum": "0.000001",
+          "comparison": "gte"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "name": "mcp-connect",
+      "status": "ok",
+      "startedAt": "2026-10-26T00:36:10.529Z",
+      "durationMs": 809,
+      "detail": {
+        "endpoint": "https://mcp.pharos.xyz/mcp",
+        "mode": "sdk-streamable-http"
+      }
+    },
+    {
+      "index": 3,
+      "name": "mcp-tools-list",
+      "status": "ok",
+      "startedAt": "2026-10-26T00:36:11.338Z",
+      "durationMs": 189,
+      "detail": {
+        "sessionId": "34c14506-79fe-4368-be02-715ba0bd3431",
+        "toolCount": 14,
+        "toolNames": [
+          "get_chain_info",
+          "get_block_number",
+          "get_balance",
+          "get_transaction_count",
+          "get_gas_price",
+          "get_block",
+          "get_transaction",
+          "get_transaction_receipt",
+          "get_code",
+          "get_storage_at",
+          "eth_call",
+          "estimate_gas",
+          "get_logs",
+          "send_raw_transaction"
+        ],
+        "requiredToolsPresent": true
+      }
+    },
+    {
+      "index": 4,
+      "name": "chain-info-verify-network",
+      "status": "ok",
+      "startedAt": "2026-10-26T00:36:11.527Z",
+      "durationMs": 119,
+      "detail": {
+        "request": {
+          "tool": "get_chain_info",
+          "arguments": {}
+        },
+        "response": "{\n  \"name\": \"Pharos\",\n  \"chainId\": 1672,\n  \"chainIdHex\": \"0x688\",\n  \"expectedChainId\": 1672,\n  \"chainIdMatches\": true,\n  \"latestBlock\": \"21263925\",\n  \"latestBlockHex\": \"0x1447635\",\n  \"nativeSymbol\": \"PROS\",\n  \"clientVersion\": \"portal/1.0.0\",\n  \"rpcUrl\": \"https://rpc.pharos.xyz\"\n}",
+        "chainId": 1672,
+        "chainIdHex": "0x688",
+        "latestBlock": "21263925",
+        "nativeSymbol": "PROS",
+        "clientVersion": "portal/1.0.0",
+        "networkCheck": {
+          "expected": {
+            "name": "mainnet",
+            "chainId": 1672
+          },
+          "actual": 1672,
+          "ok": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "name": "fetch-live-balance",
+      "status": "ok",
+      "startedAt": "2026-10-26T00:36:11.647Z",
+      "durationMs": 71,
+      "detail": {
+        "request": {
+          "tool": "get_balance",
+          "arguments": {
+            "address": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647"
+          }
+        },
+        "response": "{\n  \"address\": \"0x912c9aDe24D44d8922f0866D8Dcb079f1363f647\",\n  \"balanceWei\": \"0\",\n  \"balance\": \"0\",\n  \"symbol\": \"PROS\",\n  \"balanceHex\": \"0x0\"\n}",
+        "address": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+        "balanceWei": "0",
+        "balanceHex": "0x0",
+        "reportedBalance": "0",
+        "symbol": "PROS"
+      }
+    },
+    {
+      "index": 6,
+      "name": "apply-rule",
+      "status": "ok",
+      "startedAt": "2026-10-26T00:36:11.718Z",
+      "durationMs": 2,
+      "detail": {
+        "comparison": "gte",
+        "minimumNativeBalance": "0.000001",
+        "minimumWei": "1000000000000",
+        "balanceWei": "0",
+        "outcome": "BELOW_MINIMUM"
+      }
+    }
+  ],
+  "runtime": {
+    "node": "v24.14.1",
+    "platform": "win32",
+    "runner": "src/flow.ts (deterministic executor of skills/pharos-chain-decision/SKILL.md)"
+  },
+  "result": {
+    "status": "ok",
+    "decision": "BELOW_MINIMUM",
+    "details": {
+      "decision": "BELOW_MINIMUM",
+      "explanation": "Live native balance of 0x912c9aDe24D44d8922f0866D8Dcb079f1363f647 is 0 PROS (0 wei) at block 21263925 on mainnet (chain 1672), which is greater than or equal to the configured minimum of 0.000001 PROS -> BELOW_MINIMUM. Data source: Pharos Chain MCP get_balance via https://mcp.pharos.xyz/mcp at 2026-10-26T00:36:11.719Z.",
+      "address": "0x912c9aDe24D44d8922f0866D8Dcb079f1363f647",
+      "balanceWei": "0",
+      "balanceDecimal": "0",
+      "symbol": "PROS",
+      "minimumNativeBalance": "0.000001",
+      "minimumWei": "1000000000000",
+      "comparison": "gte",
+      "network": "mainnet",
+      "chainId": 1672,
+      "block": "21263925",
+      "mcpUrl": "https://mcp.pharos.xyz/mcp",
+      "evaluatedAt": "2026-10-26T00:36:11.719Z"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "pharos-chain-decision": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "9e8333c4b00223d758169867cac8099c719c1d9bf942a9921269b374cbc4f5ac"
+    }
+  }
+}

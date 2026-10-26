@@ -1,0 +1,36 @@
+{
+  "name": "pharos-skill-chain-flow",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pharos Agent Arena Task 8 - a SkillEngine Skill (pharos-chain-decision) composed with the official Pharos Chain MCP into one live, read-only decision agent flow.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:live": "cross-env PHAROS_LIVE=1 vitest run test/live.flow.test.ts",
+    "test:live:testnet": "cross-env PHAROS_LIVE_TESTNET=1 vitest run test/live.testnet.test.ts",
+    "flow": "tsx src/cli.ts",
+    "start": "node dist/src/cli.js",
+    "chain-mcp": "node scripts/chain-mcp.mjs start",
+    "chain-mcp:ensure": "node scripts/chain-mcp.mjs ensure",
+    "chain-mcp:health": "node scripts/chain-mcp.mjs health",
+    "demo": "node scripts/run-demo.mjs",
+    "skills:install": "npx -y skills add . --skill pharos-chain-decision -a opencode --copy -y"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "cross-env": "^10.0.0",
+    "eslint": "^9.30.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.35.0",
+    "vitest": "^3.2.0"
+  }
+}

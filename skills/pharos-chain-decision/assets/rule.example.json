@@ -1,0 +1,6 @@
+{
+  "minimumNativeBalance": "1",
+  "comparison": "gte",
+  "network": "atlantic-testnet",
+  "description": "Example rule: the wallet must hold at least 1 PHRS on Atlantic Testnet. Copy to config/rule.json and adjust."
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * CLI for the pharos-chain-decision flow (Task 8: SkillEngine Skill + Pharos Chain MCP).
+ * CLI for the pharos-chain-decision flow (SkillEngine Skill + Pharos Chain MCP).
  *
  * One user request -> one end-to-end flow:
  *   load skill config (rule + network) -> Chain MCP (tools/list, get_chain_info,

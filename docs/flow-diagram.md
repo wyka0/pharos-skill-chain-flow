@@ -1,4 +1,4 @@
-# Flow Diagram — Skill + Chain MCP composition (Task 8)
+# Flow Diagram — Skill + Chain MCP composition
 
 ## What calls what, in what order (one user request)
 

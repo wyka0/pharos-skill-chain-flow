@@ -1,4 +1,4 @@
-# Discovery Report — Official Integration Findings (Task 8)
+# Discovery Report — Official Integration Findings
 
 All findings below were verified against official sources before implementation
 (discovery date: 2026-10-26). Live values were checked by direct calls during discovery.
@@ -14,7 +14,7 @@ All findings below were verified against official sources before implementation
 | Official `assets/networks.json` schema | `{networks:[{name, rpcUrl, chainId, explorerUrl, explorerApiUrl, nativeToken}], defaultNetwork:"atlantic-testnet"}` — fetched verbatim and mirrored in our skill. | [assets/networks.json](https://github.com/PharosNetwork/pharos-skill-engine/blob/main/assets/networks.json) |
 | Invocation workflow | Agent-first: the agent reads SKILL.md, resolves the intent via the Capability Index, executes the reference-file procedure (Foundry `cast`/`forge` in the official skill; Chain MCP tool calls in ours), then shows results with explorer links. | Skill Engine guide, "How the Agent Resolves a Request" |
 
-Note: the official SkillEngine is Foundry-oriented (`cast`/`forge`). Task 8 asks for a
+Note: the official SkillEngine is Foundry-oriented (`cast`/`forge`). The assignment asks for a
 skill whose output depends on **Chain MCP** data, so our skill keeps the exact Skill
 format and authoring conventions, but its reference file specifies MCP tool calls
 instead of CLI commands. This composition (Skill → Chain MCP inside one flow) is what
@@ -47,7 +47,7 @@ Testnet explorer: `https://atlantic.pharosscan.xyz/`. Testnet native symbol: PHR
 
 ## 4. Agent Arena / task board
 
-- The Arena portal (`ai.pharos.xyz`) is login-gated; the public task text for Task 8 was
+- The Arena portal (`ai.pharos.xyz`) is login-gated; the public task text was
   provided with the assignment. The public [Season of AI Build
   announcement](https://www.pharos.xyz/blog/introducing-pharos-season-of-ai-build-for-the-agentic-economy)
   confirms the program structure: Chain MCP + Developer Docs MCP + SkillEngine as the

@@ -1,4 +1,4 @@
-# Demo — one request, end to end (Task 8)
+# Demo — one request, end to end
 
 Everything in this file was executed for real on 2026-10-26. Reproduce it with the
 commands below; no mock data is involved at any point.

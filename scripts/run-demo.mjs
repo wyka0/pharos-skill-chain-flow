@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * End-to-end demo for Task 8: one user request -> SkillEngine Skill procedure ->
+ * End-to-end demo: one user request -> SkillEngine Skill procedure ->
  * live Pharos Chain MCP calls -> decision + trace.
  *
  * Runs three LIVE flows (no mocks anywhere in this script):

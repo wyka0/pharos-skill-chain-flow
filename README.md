@@ -1,7 +1,7 @@
-# Pharos Skill Chain Flow — Task 8
+# Pharos Skill Chain Flow
 
 **A real SkillEngine Skill composed with the official Pharos Chain MCP into one working agent flow.**
-Pharos Agent Arena · Task 8 · Skill + Chain MCP Flow
+Pharos Agent Arena · Skill + Chain MCP Flow
 
 One user request → the `pharos-chain-decision` Skill is invoked → it fetches **live** chain
 data through the **Pharos Chain MCP** → validates it → applies a **configurable rule** →

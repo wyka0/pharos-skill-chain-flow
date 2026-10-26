@@ -2,7 +2,7 @@
   "name": "pharos-skill-chain-flow",
   "version": "0.1.0",
   "private": true,
-  "description": "Pharos Agent Arena Task 8 - a SkillEngine Skill (pharos-chain-decision) composed with the official Pharos Chain MCP into one live, read-only decision agent flow.",
+  "description": "Pharos Agent Arena - a SkillEngine Skill (pharos-chain-decision) composed with the official Pharos Chain MCP into one live, read-only decision agent flow.",
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {

@@ -9,7 +9,7 @@
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint .",
-    "test": "vitest run",
+    "test": "node scripts/check-rpc-methods.mjs && vitest run",
     "test:watch": "vitest",
     "test:live": "cross-env PHAROS_LIVE=1 vitest run test/live.flow.test.ts",
     "test:live:testnet": "cross-env PHAROS_LIVE_TESTNET=1 vitest run test/live.testnet.test.ts",
